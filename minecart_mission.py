@@ -2,7 +2,7 @@ from pybricks.pupdevices import Motor,ColorSensor
 from pybricks.parameters import Port, Direction
 from pybricks.robotics import DriveBase
 from pybricks.tools import wait
-from CheerioBot import Cheerio
+from cheerio_bot import Cheerio
 
 def run_minecart_mission():
     bot=Cheerio()

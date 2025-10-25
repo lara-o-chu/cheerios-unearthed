@@ -1,4 +1,4 @@
-from CheerioBot import Cheerio
+from cheerio_bot import Cheerio
 
 def run_blue_mission():
     bot = Cheerio()
