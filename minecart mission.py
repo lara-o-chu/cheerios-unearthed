@@ -4,7 +4,7 @@ from pybricks.robotics import DriveBase
 from pybricks.tools import wait
 from CheerioBot import Cheerio
 
-def minecart_mission():
+def run_minecart_mission():
     bot=Cheerio()
     # drive to small black box
     bot.drive_straight(speed=300, distance=710)
@@ -22,4 +22,4 @@ def minecart_mission():
     bot.left_attachment_motor.run_angle(420, -1010)
     # bot.drive_straight(speed=250, distance=-117)
 
-minecart_mission()
+# run_minecart_mission()
