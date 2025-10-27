@@ -13,7 +13,7 @@ if selected == "B":
 elif selected == "M":
     run_minecart_mission()
 elif selected == "S":
-    run_pirate_boat
+    run_pirate_boat()
 
  
 

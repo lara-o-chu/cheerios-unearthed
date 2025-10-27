@@ -5,7 +5,7 @@ def run_blue_mission():
 
     # drive to silo
     bot.drive_straight(speed=500, distance=-400)    # hit silo
-    for rat in range(2):
+    for rat in range(4):
         bot.left_attachment_motor.run_angle(speed=450,rotation_angle=-150)
         bot.left_attachment_motor.run_angle(speed=450,rotation_angle=150)
     
