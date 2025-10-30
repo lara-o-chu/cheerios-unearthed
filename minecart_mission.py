@@ -7,16 +7,16 @@ from cheerio_bot import Cheerio
 def run_minecart_mission():
     bot=Cheerio()
     # drive to small black box
-    bot.drive_straight(speed=300, distance=714)
+    bot.drive_straight(speed=300, distance=764)
     # turn toward mission
     bot.turn(speed=100, degrees=90)
     bot.drive_straight(speed=250, distance=406)
     bot.turn(speed=100, degrees=-90)
-    bot.drive_straight(speed=250, distance=-104)
+    bot.drive_straight(speed=250, distance=-124)
     bot.right_attachment_motor.run_angle(speed=600, rotation_angle=-420)
-    bot.drive_straight(speed=250, distance=62)
+    bot.drive_straight(speed=250, distance=42)
     bot.right_attachment_motor.run_angle(600, 240)
-    bot.drive_straight(speed=250,distance=125)
+    bot.drive_straight(speed=250,distance=145)
     bot.left_attachment_motor.run_angle(620, 665)
     bot.left_attachment_motor.run_angle(620, 255)
     bot.left_attachment_motor.run_angle(420, -1010)
@@ -24,6 +24,6 @@ def run_minecart_mission():
     bot.turn(speed=100, degrees=-90)
     bot.drive_straight(speed=250, distance=406)
     bot.turn(speed=100, degrees=-90)
-    bot.drive_straight(speed=300, distance=714)
+    bot.drive_straight(speed=300, distance=764)
 
 # run_minecart_mission()
