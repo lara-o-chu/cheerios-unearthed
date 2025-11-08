@@ -12,8 +12,8 @@ selected = hub_menu("B", "M", "S", "G")
 
 # Based on the selection, run a program.
 if selected == "B":
-    # run_blue_mission()
-    run_end_of_blue_mission()
+    run_blue_mission()
+    # run_end_of_blue_mission()
 elif selected == "M":
     run_minecart_mission()
 elif selected == "S":
