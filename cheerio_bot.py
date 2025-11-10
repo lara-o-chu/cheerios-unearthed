@@ -18,11 +18,18 @@ class Cheerio:
 
     cheerio_drive.use_gyro(True)
 
+    default_settings = cheerio_drive.settings()
+    default_straight_speed = default_settings[0]
+    default_straight_acceleration = default_settings[1]
+    default_turn_rate = default_settings[2]
+    default_turn_acceleration = default_settings[3]
+
+
     def is_stalled(self):
         return self.cheerio_drive.stalled()
 
-    def drive_straight(self, speed, distance, wait=True):
-        self.cheerio_drive.settings(straight_speed=speed)
+    def drive_straight(self, speed, distance, acceleration=default_straight_acceleration, wait=True):
+        self.cheerio_drive.settings(straight_speed=speed,straight_acceleration=acceleration)
         self.cheerio_drive.straight(distance=distance,wait=wait)
 
     def turn(self, speed, degrees, wait=True):
