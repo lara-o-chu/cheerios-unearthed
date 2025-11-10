@@ -6,7 +6,7 @@ def run_arm_test():
     bot = Cheerio()
 
     bot.left_attachment_motor.run(-10000)
-    wait(3000)
+    wait(4000)
     bot.left_attachment_motor.stop()
 
 
