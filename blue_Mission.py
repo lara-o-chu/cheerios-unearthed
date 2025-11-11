@@ -39,16 +39,16 @@ def run_blue_mission():
     bot.cheerio_drive.drive(speed=200,turn_rate=0)
     while bot.right_color_sensor.reflection() > 20:
         wait(1)
-    bot.drive_straight(speed=100,distance=30)
+    bot.drive_straight(speed=100,distance=36)
     # REMOVE
     print("Found Black:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
-    bot.turn (speed=100, degrees=-45)
+    bot.turn (speed=160, degrees=-45)
 
     # REMOVE
     print("Turned:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
 
     # heavy lifting arm
-    bot.drive_straight(speed=100,distance=10)
+    bot.drive_straight(speed=100,distance=15)
     bot.right_attachment_motor.run_angle(speed=300,rotation_angle=-350)
     bot.right_attachment_motor.run_angle(speed=300,rotation_angle=350)
 
@@ -80,7 +80,7 @@ def run_blue_mission():
 
     print("ended while loop")
 
-    bot.drive_straight(speed=100,distance=-50)
+    bot.drive_straight(speed=100,distance=-77)
     # bot.turn(speed=100,degrees=34,wait=False)
     bot.cheerio_drive.drive(0,100)
     # bot.cheerio_drive.turn()
@@ -89,9 +89,9 @@ def run_blue_mission():
     # bot.drive_straight(speed=100,distance=)
     # bot.drive_straight(340,25)
     # DO NOT MESS WITH THIS 40 POINT,ALMOST WORKING, PICE OF CODE
-    bot.turn(speed=250, degrees=-45)
-    bot.drive_straight(speed=250,distance=520)
-    bot.turn(300,46)
+    bot.turn(speed=250, degrees=-42)
+    bot.drive_straight(speed=250,distance=530)
+    bot.turn(300,48)
     bot.drive_straight(300,-300)
     bot.drive_straight(300,90)
     bot.turn(450,-45)
