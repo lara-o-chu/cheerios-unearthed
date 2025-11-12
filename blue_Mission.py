@@ -49,22 +49,19 @@ def run_blue_mission():
 
     # heavy lifting arm
     bot.drive_straight(speed=100,distance=15)
-    bot.right_attachment_motor.run_angle(speed=300,rotation_angle=-350)
-    bot.right_attachment_motor.run_angle(speed=300,rotation_angle=350)
+    bot.right_attachment_motor.run_angle(speed=300,rotation_angle=-340)
+    bot.right_attachment_motor.run_angle(speed=300,rotation_angle=340)
 
     # REMOVE
     print("Lifted:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
 
     # who lived here
-    bot.drive_straight(967,90)
+    bot.drive_straight(200,70)
     bot.turn(speed=400,degrees=-30,wait=False)
     watch=StopWatch()
 
     # REMOVE
-    print(bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
-
-    settings = bot.cheerio_drive.settings()
-    print(settings)
+    print("Before Who Lived Here While Loop:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
 
     print("starting while loop")
 
@@ -76,7 +73,7 @@ def run_blue_mission():
         wait(10)
 
     # REMOVE
-    print(bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
+    print("After Who Lived Here While Loop:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
 
     print("ended while loop")
 
@@ -86,33 +83,47 @@ def run_blue_mission():
     # bot.cheerio_drive.turn()
     while bot.right_color_sensor.reflection() > 20:
         wait(1)
+    bot.cheerio_drive.stop()
+
     # bot.drive_straight(speed=100,distance=)
     # bot.drive_straight(340,25)
     # DO NOT MESS WITH THIS 40 POINT,ALMOST WORKING, PICE OF CODE
-    bot.turn(speed=250, degrees=-42)
-    bot.drive_straight(speed=250,distance=530)
+
+    print("Before Last Turn Toward to Whats on Sale:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
+    
+    # wait(200)
+
+    # current_heading =bot.cheerio_drive.angle()
+
+    # target_heading=-80
+    # turn_angle =target_heading-current_heading
+
+    # print("current_heading", current_heading)
+    # print("target_heading", target_heading)
+    # print("turn_angle", turn_angle)
+
+    bot.turn(speed=167, degrees=-41)
+    # bot.turn(speed=167, degrees=turn_angle, acceleration=100) 
+    # bot.turn(speed=167, degrees=turn_angle) 
+
+    print("Before Driving to Whats on Sale:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
+
+    # wait(200)
+
+    print("Final:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
+
+
+    bot.drive_straight(speed=250,distance=540)
     bot.turn(300,48)
     bot.drive_straight(300,-300)
     bot.drive_straight(300,90)
     bot.turn(450,-45)
     bot.left_attachment_motor.run_angle(967,-85)
     bot.left_attachment_motor.run_angle(967,85)
-    bot.drive_straight(456,228)
-    
-    
-
-    # bot.drive_straight(speed=455,distance=-5000)
-    # bot.turn(speed=400,degrees=30)
-
-#     # back up
-#     bot.drive_straight(speed=250,distance=-150)
-#     bot.turn(speed=100, degrees=-25)
-
-#     # drive fast to red home area
-#     bot.drive_straight(speed=925,distance=685)
-#     bot.turn(speed=250,degrees=-43)
-#     bot.drive_straight(speed=925,distance=750)
-#     bot.turn (speed=500,degrees=-67)
-#     bot.drive_straight(speed=967,distance=650)
-
-# # blue_mission()
+    bot.drive_straight(456,218)
+    bot.turn(speed=100,degrees=-90)
+    bot.cheerio_drive.drive(300,0)
+    while bot.right_color_sensor.reflection()>20 and bot.left_color_sensor.reflection()> 20 :
+        wait(1)
+    bot.turn(100,80)
+    bot.drive_straight(200,10000)
