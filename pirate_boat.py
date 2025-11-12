@@ -1,4 +1,5 @@
 from cheerio_bot import Cheerio
+from pybricks.tools import wait
 
 def run_pirate_boat():
     bot=Cheerio()
@@ -21,9 +22,12 @@ def run_pirate_boat():
     bot.right_attachment_motor.run_angle(speed=100,rotation_angle=-220)
     bot.drive_straight(speed=200, distance=-75)
     #lift arm
-    bot.left_attachment_motor.run_angle(speed=2000, rotation_angle=2900)
+    #bot.left_attachment_motor.run_angle(speed=2000, rotation_angle=2900)
+    bot.left_attachment_motor.run(speed=2000)
+    wait(500)
     # Back up to home (Hopefully pull sand)
     bot.drive_straight(speed=400,distance=-750)
+    bot.left_attachment_motor.stop()
     
 
 
