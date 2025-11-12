@@ -32,8 +32,8 @@ class Cheerio:
         self.cheerio_drive.settings(straight_speed=speed,straight_acceleration=acceleration)
         self.cheerio_drive.straight(distance=distance,wait=wait)
 
-    def turn(self, speed, degrees, wait=True):
-        self.cheerio_drive.settings(turn_rate=speed)
+    def turn(self, speed, degrees, acceleration=default_turn_acceleration, wait=True):
+        self.cheerio_drive.settings(turn_rate=speed,turn_acceleration=acceleration)
         self.cheerio_drive.turn(angle=degrees, wait=wait)
 
     
