@@ -5,14 +5,14 @@ from pybricks.tools import StopWatch
 def run_drive_test():
     bot = Cheerio()
 
-    # drive to silo
-    bot.cheerio_drive.drive(speed=0,turn_rate=100)
-    wait(5000)
-    # bot.drive_straight(speed=200, distance=700, wait=False)
+    bot.report_position("starting drive test")
 
-    # while not bot.cheerio_drive.done():
-    # while True:
-    #     print (bot.right_color_sensor.reflection())
-    #     wait(10)
+    bot.gyro_turn_to_heading(turn_rate=-200,target_heading=-60)
+    wait(100)
+    bot.report_position("middle of drive test")
+    bot.gyro_turn_to_heading(turn_rate=-50,target_heading=-80)
+    wait(100)
+    bot.report_position("ending drive test")
+
 
 run_drive_test()
