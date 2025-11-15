@@ -102,7 +102,12 @@ def run_blue_mission():
     # print("target_heading", target_heading)
     # print("turn_angle", turn_angle)
 
-    bot.turn(speed=167, degrees=-41)
+    # bot.gyro_turn_to_heading(turn_rate=-200,target_heading=-60)
+    # wait(100)
+    # bot.report_position("middle of drive test")
+    bot.gyro_turn_to_heading(turn_rate=-50,target_heading=-78)
+    wait(100)
+    # bot.report_position("ending drive test")
     # bot.turn(speed=167, degrees=turn_angle, acceleration=100) 
     # bot.turn(speed=167, degrees=turn_angle) 
 
@@ -113,8 +118,9 @@ def run_blue_mission():
     print("Final:", bot.cheerio_drive.distance(), bot.cheerio_drive.angle())
 
 
-    bot.drive_straight(speed=250,distance=540)
-    bot.turn(300,48)
+    bot.drive_straight(speed=250,distance=560)
+    bot.gyro_turn_to_heading(turn_rate=50,target_heading=-45)
+    wait(100)
     bot.drive_straight(300,-300)
     bot.drive_straight(300,90)
     bot.turn(450,-45)
@@ -122,8 +128,12 @@ def run_blue_mission():
     bot.left_attachment_motor.run_angle(967,85)
     bot.drive_straight(456,218)
     bot.turn(speed=100,degrees=-90)
-    bot.cheerio_drive.drive(300,0)
-    while bot.right_color_sensor.reflection()>20 and bot.left_color_sensor.reflection()> 20 :
-        wait(1)
+
+    # bot.cheerio_drive.drive(300,0)
+    # while bot.right_color_sensor.reflection()>20 and bot.left_color_sensor.reflection()> 20 :
+    #     wait(1)
+    bot.drive_straight(speed=700,distance=350)
     bot.turn(100,80)
-    bot.drive_straight(200,10000)
+    bot.drive_straight(speed=700,distance=300)
+    bot.turn(speed=700,degrees=-20)
+    bot.drive_straight(700,10000)

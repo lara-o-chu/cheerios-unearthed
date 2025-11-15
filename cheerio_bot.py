@@ -45,4 +45,20 @@ class Cheerio:
             self.cheerio_drive.straight(distance)
             self.cheerio_drive.turn(360.0/sides)
 
+    def report_position(self,comment="position:"):
+        print(comment, self.cheerio_drive.distance(), self.cheerio_drive.angle())
+
+    def gyro_turn_to_heading(self,turn_rate,target_heading):
+        self.report_position("starting gyro turn")
+        start_heading=self.cheerio_drive.angle()
+        self.cheerio_drive.drive(speed=0,turn_rate=turn_rate)
+        if(start_heading < target_heading):
+            while(self.cheerio_drive.angle()<target_heading):
+                wait(1)
+        else:
+            while(self.cheerio_drive.angle()>target_heading):
+                wait(1)
+        self.cheerio_drive.brake()
+        self.report_position("ending gyro turn")
+
 
